@@ -17,32 +17,33 @@ function maxArea(height) {
     Output: int , max area
 
     Steps:
-    -Go through array and record left-bound highest height
-    -Go through and record right bound highest height
-    - Keep track of n distance between left and right bound
+    -Start with left bound and right bound of the array
+    - Check which was is higher and reset lower one
+         - Keep calculating area
     */
 
-    let left = height[0];
-    let leftIndex = 0;
-    let right = height[1];
-    let rightIndex = 1;
-    let n = rightIndex-leftIndex;
+    let start = 0;
+    let end = height.length-1;
     let maxArea = 0;
 
-    for (let i = 2; i < height.length; i++) {
-        n = rightIndex-leftIndex;
-        let area = Math.min(left,right) * n;
+    while(start < end) {
+        let left = height[start];
+
+        let right = height[end];
+        let area = Math.min(left,right) * (end-start);
 
         if (area > maxArea) {
-            maxArea = area;
+            maxArea  = area;
         }
-        if (height[i] <= left) {
-            right = height[i];
-            rightIndex = i;
-        } 
-        
-       
+        if (left < right) {
+            start++;
+        } else {
+            end--;
+        }
     }
+    return maxArea;
+
+    
 }
 
 module.exports = maxArea;
