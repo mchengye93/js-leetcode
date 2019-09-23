@@ -16,7 +16,7 @@ function maxArea(height) {
     Input: arr of heights
     Output: int , max area
 
-    Steps:
+    Steps: Time: O(N), Space: O(1)
     -Start with left bound and right bound of the array
     - Check which was is higher and reset lower one
          - Keep calculating area
@@ -30,7 +30,7 @@ function maxArea(height) {
         let left = height[start];
 
         let right = height[end];
-        let area = Math.min(left,right) * (end-start);
+        const area = Math.min(left,right) * (end-start);
 
         if (area > maxArea) {
             maxArea  = area;
