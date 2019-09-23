@@ -17,20 +17,21 @@ function twoSum(arr, target) {
     - Go through each values and find the complement to get to target
 
    */
-  const numVisited = {};
+  const numsVisited = {};
+  const res = [];
 
   for (let i = 0; i < arr.length; i++) {
-    numVisited [arr[i]] = i;
+    const num = arr[i];
+    let complement = target - arr[i];
+
+    if (numsVisited[complement] !== undefined) {
+        res.push(i);
+        res.push(numsVisited[complement]);
+    }
+    numsVisited[num] = i;
   }
 
-  for (let i = 0; i < arr.length; i++) {
-      let complement = target - arr[i];
-
-      if (numVisited [complement]) {
-          return [i, numVisited [complement]];
-      }
-  }
-  return -1;
+  return res;
   
 }
 
