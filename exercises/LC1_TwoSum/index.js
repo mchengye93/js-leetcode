@@ -7,24 +7,51 @@
 // twoSum([3,2,4], 9) --> [1,2]
 
 function twoSum(arr, target) {
-    /*
+  
+   /*
     Input: Array of numbers and target
     Output: Indices of two numbers
 
+   Steps: Time: O(N+N) = O(N) Space: O(N)
+    - Save all numbers into an object
+    - Go through each values and find the complement to get to target
+
+   */
+  let num = {};
+
+  for (let i = 0; i < arr.length; i++) {
+      num[arr[i]] = i;
+  }
+
+  for (let i = 0; i < arr.length; i++) {
+      let complement = target - arr[i];
+
+      if (num[complement]) {
+          return [i, num[complement]];
+      }
+  }
+  return -1;
+  
+
+
+
+}
+
+module.exports = twoSum;
+
+  /*
+  Naive solution:
     Steps: Time: O(N*(N-1)) = O(N^2), Space: O(1)
       - Go through all possible pairs 
           - If found a pair then return
 
     Assumptions: There will always be a pair
 
-    */
+    
    for (let i = 0; i < arr.length; i++) {
        for (let x = i+1; x < arr.length; x++) {
            if (arr[i]+arr[x] === target) return [i,x];
        }
    }
    return -1;
-
-}
-
-module.exports = twoSum;
+   */
