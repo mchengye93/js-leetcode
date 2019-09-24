@@ -16,6 +16,27 @@ A solution set is:
   [-1, -1, 2]
 ]
 */
-const threeSum = nums => {};
+const threeSum = nums => {
+    /*
+    Input: int arr
+    Output: truples of int that gives 0
+    Steps:
+    -Take first value, then second, the third 
+         -if they sum to 0 then push onto arr result
+    */
+   let results = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        for (let x = i+1; x < nums.length; x++) {
+            for(let y = x+1; y < nums.length; y++) {
+                let sum = nums[i] + nums[x] + nums[y]
+                if (sum === 0) {
+                    results.push([nums[i], nums[x] ,nums[y]]);
+                }
+            }
+        }
+    }
+    return results;
+};
 
 module.exports = threeSum;
