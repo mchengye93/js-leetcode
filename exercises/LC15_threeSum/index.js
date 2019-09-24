@@ -18,9 +18,43 @@ A solution set is:
 */
 const threeSum = nums => {
     /*
+    Input: Arr of int
+    Output: Arr of truples, sum = 0
+
+    Steps: 
+    -Sort arr
+    -Have left and right pointer and mid moves accordingly
+         - if 
+    */
+    nums.sort((a,b) => a-b);
+    let result = [];
+
+    for (let i = 0; i < nums.length; i++) {
+        const target = 0 - nums[i];
+        let left = i + 1;
+        let right = nums.length-1;
+
+        while (left < right ) {
+            if (nums[left] + nums[right] === target) {
+                result.push(nums[i], nums[left], nums[right]);
+                left++;
+
+            } else if ( nums[left] + nums[right] < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+    }
+};
+
+module.exports = threeSum;
+/*
+  /*
     Input: int arr
     Output: truples of int that gives 0
-    Steps:
+    Steps: O(N^3)
     -Take first value, then second, the third 
          -if they sum to 0 then push onto arr result
     */
@@ -37,6 +71,4 @@ const threeSum = nums => {
         }
     }
     return results;
-};
-
-module.exports = threeSum;
+*/
