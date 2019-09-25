@@ -34,14 +34,18 @@ const threeSum = nums => {
         let left = i + 1;
         let right = nums.length-1;
 
+        //if nums are the same the skips to next number
         if (i > 0 && nums[i] === nums[i-1]) {
             continue;
         }
-
+        //keep looping left and right if they are different
         while (left < right ) {
+
+            //if left and right gives us target then we can push result
             if (nums[left] + nums[right] === target) {
                 result.push([nums[i], nums[left], nums[right]]);
                 left++;
+                //if next left is same skip until it is different
                 while(nums[left] === nums[left-1]) {
                     left++;
                 }
