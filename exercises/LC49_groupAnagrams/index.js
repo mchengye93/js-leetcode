@@ -16,6 +16,27 @@ All inputs will be in lowercase.
 The order of your output does not matter.
 */
 
-function groupAnagrams(strs) {}
+function groupAnagrams(strs) {
+    let anagrams = {};
+
+    for (let i = 0; i < strs.length; i++) {
+        let word = strs[i];
+        let letters = strs[i].split('').sort().join('');
+    
+        if (anagrams[letters] === undefined) {
+            anagrams[letters] = [word];
+        } else{
+            anagrams[letters].push(word);
+        }
+    }
+    let result = [];
+
+    for (let key in anagrams) {
+        result.push(anagrams[key]);
+    }
+
+    return result;
+
+}
 
 module.exports = groupAnagrams;
