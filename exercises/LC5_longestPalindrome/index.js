@@ -4,6 +4,8 @@
 // longestPalindrome("abba") --> "abba"
 // longestPalindrome("a") --> "a"
 
-function longestPalindrome(s) {}
+function longestPalindrome(s) {
+  
+}
 
 module.exports = longestPalindrome;
