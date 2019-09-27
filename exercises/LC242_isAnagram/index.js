@@ -17,7 +17,10 @@ What if the inputs contain unicode characters? How would you adapt your solution
  such case?
 */
 function isAnagram(s, t) {
-
+    if (s.length !== t.length) {
+        return false;
+    }
+    return s.split('').sort().join('') === t.split('').sort().join('');
 
 }
 
