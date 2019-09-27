@@ -19,6 +19,7 @@ The order of your output does not matter.
 function groupAnagrams(strs) {
     let anagrams = {};
 
+    //Time Complexity: O(NKlogK) SpaceComplexity: O(KN)
     for (let i = 0; i < strs.length; i++) {
         let word = strs[i];
         let letters = strs[i].split('').sort().join('');
