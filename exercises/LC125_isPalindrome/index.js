@@ -15,6 +15,8 @@ Output: false
 */
 
 function isPalindrome(s) {
+
+    //Time Complexity = O(N)
     //sanitize and remove ',', '_', '-'
     s = s.toLowerCase().replace(/[\W_]/g, "");
     let left = 0; 
