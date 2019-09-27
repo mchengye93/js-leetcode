@@ -23,19 +23,17 @@ function groupAnagrams(strs) {
         let word = strs[i];
         let letters = strs[i].split('').sort().join('');
     
-        if (anagrams[letters] === undefined) {
-            anagrams[letters] = [word];
-        } else{
-            anagrams[letters].push(word);
-        }
-    }
-    let result = [];
 
-    for (let key in anagrams) {
-        result.push(anagrams[key]);
+        if (!anagrams[letters]) {
+            anagrams[letters] = [];
+        } 
+        anagrams[letters].push(word);
+        
     }
+    
+    return Object.values(anagrams);
 
-    return result;
+ 
 
 }
 
