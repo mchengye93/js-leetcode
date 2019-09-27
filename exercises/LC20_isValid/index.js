@@ -1,4 +1,5 @@
 const isValid = s => {
+    //Time Complexity: O(n) Space Complexity: O(n)
     let stack = [];
 
     let hash = {'}': '{', ']': '[', ')': '('};
@@ -11,7 +12,6 @@ const isValid = s => {
             if (hash[str] !== pop) {
                 return false;
             }
-          
             
         }
     }
