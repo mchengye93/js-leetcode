@@ -17,6 +17,7 @@ What if the inputs contain unicode characters? How would you adapt your solution
  such case?
 */
 function isAnagram(s, t) {
+    //TimeComplexity: O(n) Space Complexity: O(1) because only 26 chars
     if (s.length !== t.length) {
         return false;
     }
@@ -28,8 +29,7 @@ function isAnagram(s, t) {
             sCharCount[s[i]] = 1;
         } else {
             sCharCount[s[i]]++;
-        }
-         
+        }    
     }
 
     for (let i = 0 ; i < t.length; i++) {
@@ -37,10 +37,6 @@ function isAnagram(s, t) {
             return false;
         } else {
             sCharCount[t[i]]--;
-
-            if (sCharCount[t[i]] < 0) {
-                return false;
-            }
         }
     }
     return true;
