@@ -14,6 +14,20 @@ Input: "race a car"
 Output: false
 */
 
-function isPalindrome(s) {}
+function isPalindrome(s) {
+    //sanitize and remove ',', '_', '-'
+    s = s.toLowerCase().replace(/[\W_]/g, "");
+    let left = 0; 
+    let right = s.length -1;
+
+    while(left < right) {
+        if (s[left] !== s[right]) {
+            return false;
+        }
+        left++;
+        right--;
+    }
+    return true;
+}
 
 module.exports = isPalindrome;
