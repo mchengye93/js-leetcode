@@ -8,8 +8,7 @@ The right subtree of a node contains only nodes with keys greater than the node'
 Both the left and right subtrees must also be binary search trees.
 */
 function isValidBST(root) {
-   
-
+    let validity = true;
     let valid = (node, min,max) => {
         if(!node) return;
         if (min !== null && node.val <= min || max !==null && node.val >= max) {
@@ -21,6 +20,7 @@ function isValidBST(root) {
         valid(node.right, node.val, max);
     }
     valid(root, null, null);
+    return validity;
 }
 
 module.exports = isValidBST;
