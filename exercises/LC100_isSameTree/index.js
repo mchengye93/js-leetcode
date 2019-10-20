@@ -33,6 +33,7 @@ Input:     1         1
 Output: false
 */
 
+//Runtime: O(P+Q) P and Q are nodes on input trees. If recursive call count as space then O(p+q)
 function isSameTree(p, q) {
     let sameTree = true;
 
@@ -50,7 +51,7 @@ function isSameTree(p, q) {
         checkSameNode(p.right,q.right);
     }
     checkSameNode(p,q);
-    
+
     return sameTree;
 
 }
