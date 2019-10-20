@@ -52,7 +52,6 @@ function findMin(nums) {
             right = mid -1;
         }
 
-
     }
 
 }
