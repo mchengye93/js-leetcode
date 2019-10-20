@@ -17,7 +17,7 @@ Input: [4,5,6,7,0,1,2]
 Output: 0
 */
 
-
+/*Runtime: O logn Space: O(1) */
 function findMin(nums) {
     let left = 0;
     let right = nums.length-1;
