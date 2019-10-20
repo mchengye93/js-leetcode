@@ -71,7 +71,7 @@ function binarySearch(arr,target,left,right) {
     return - 1;
 }
 
-
+//Runtime: log(n) Space: O(1)
 function search(nums, target) {
     const minIdx = findInflectionIdx(nums);
 
