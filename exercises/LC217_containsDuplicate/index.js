@@ -18,6 +18,7 @@ Input: [1,1,1,3,3,4,3,2,4,2]
 Output: true
 */
 
+//Runtime: O(N) Space: O(N)
 const containsDuplicate = nums => {
     let map = {};
 
