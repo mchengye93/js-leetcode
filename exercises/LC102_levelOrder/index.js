@@ -1,3 +1,5 @@
+
+//Time complexity: O(N) traverse through each node , space complexity: O(N)
 function levelOrder(root) {
     if(root === null) return [];
   let stack = [];
