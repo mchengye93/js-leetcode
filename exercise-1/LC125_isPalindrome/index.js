@@ -14,6 +14,9 @@ Input: "race a car"
 Output: false
 */
 
+/*
+Runtime: O(N) Space complexity: O(1)
+*/
 function isPalindrome(s) {
     s = s.toLowerCase().replace(/[\W_]/g,"");
    
