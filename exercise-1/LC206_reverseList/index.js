@@ -1,9 +1,10 @@
+/*Time complexity: O(N) Space: O(1) */
 const reverseList = head => {
 
     let prev = null;
     let current = head;
 
-    let next = current.next;
+
 
     while (current) {
         let temp = current.next;
