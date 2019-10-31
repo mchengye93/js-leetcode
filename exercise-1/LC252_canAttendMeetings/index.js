@@ -4,11 +4,12 @@
 // canAttendMeetings([[0, 30], [5, 10], [15, 20]]) --> false
 // canAttendMeetings([[7, 10], [2, 4]]) --> true
 
+/*Runtime: O(NlogN) Space:O(N) */
 const canAttendMeetings = intervals => {
     const starts = [];
     const ends = [];
 
-    for (let i = 0; i < intervals; i++) {
+    for (let i = 0; i < intervals.length; i++) {
         starts.push(intervals[i][0]);
         ends.push(intervals[i][1]);
     }
